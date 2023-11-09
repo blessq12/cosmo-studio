@@ -20,19 +20,19 @@
     "src": "node_modules/font-awesome/fonts/fontawesome-webfont.woff2"
   },
   "resources/js/app.css": {
-    "file": "assets/app-197ae838.css",
+    "file": "assets/app-8cfe6644.css",
     "src": "resources/js/app.css"
   },
   "resources/js/app.js": {
     "css": [
-      "assets/app-197ae838.css"
+      "assets/app-8cfe6644.css"
     ],
-    "file": "assets/app-9346a4e6.js",
+    "file": "assets/app-59888505.js",
     "isEntry": true,
     "src": "resources/js/app.js"
   },
   "resources/sass/app.sass": {
-    "file": "assets/app-539164c9.css",
+    "file": "assets/app-275c762e.css",
     "isEntry": true,
     "src": "resources/sass/app.sass"
   }

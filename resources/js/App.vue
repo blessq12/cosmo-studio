@@ -4,7 +4,8 @@ import { appStore } from './stores/appStore';
 
 export default{
     props:{
-        company: Object
+        company: Object,
+        slugs: Object
     },
     mounted(){
         this.appStore.currentStudio = this.company.studios[0]
@@ -24,6 +25,7 @@ export default{
     <div class="layout"></div>
     <navbar></navbar>
     <hero-banner></hero-banner>
+    <slugs :slugs="slugs"></slugs>
     <fixed-icons></fixed-icons>
 </template>
 
