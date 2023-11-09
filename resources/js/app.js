@@ -6,6 +6,7 @@
 
 import './bootstrap';
 import { createApp } from 'vue';
+import { createPinia } from 'pinia';
 
 /**
  * Next, we will create a fresh Vue application instance. You may then begin
@@ -14,6 +15,9 @@ import { createApp } from 'vue';
  */
 
 const app = createApp({});
+app.use(createPinia());
+
+// import App from "./components/App";
 
 /**
  * The following block of code may be used to automatically register your

@@ -1,5 +1,7 @@
 @extends('front.layout')
 
 @section('content')
-    <app></app>
+    <app
+    :company='@json($company)'
+    ></app>
 @endsection
