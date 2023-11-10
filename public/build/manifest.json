@@ -20,14 +20,14 @@
     "src": "node_modules/font-awesome/fonts/fontawesome-webfont.woff2"
   },
   "resources/js/app.css": {
-    "file": "assets/app-7ac12560.css",
+    "file": "assets/app-9d3d3025.css",
     "src": "resources/js/app.css"
   },
   "resources/js/app.js": {
     "css": [
-      "assets/app-7ac12560.css"
+      "assets/app-9d3d3025.css"
     ],
-    "file": "assets/app-6b02e952.js",
+    "file": "assets/app-d95a9f13.js",
     "isEntry": true,
     "src": "resources/js/app.js"
   },
