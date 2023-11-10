@@ -28,7 +28,7 @@ export default{
                 <div class="accordion" id="accordionExample">
                     <div class="accordion-item" v-for="category in slugs" :key="category.uri">
                         <h2 class="accordion-header" :id="'heading_' + category.uri ">
-                        <button class="accordion-button" type="button" data-bs-toggle="collapse" :data-bs-target="'#collapse_'+category.uri" aria-expanded="false" :aria-controls="'collapse_' + category.uri">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" :data-bs-target="'#collapse_'+category.uri" aria-expanded="false" :aria-controls="'collapse_' + category.uri">
                             {{ category.name }}
                         </button>
                         </h2>
