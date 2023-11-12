@@ -27,6 +27,8 @@ export default{
     <hero-banner></hero-banner>
     <slugs :slugs="slugs"></slugs>
     <studios></studios>
+    <our-works></our-works>
+    <Footer></Footer>
     <fixed-icons></fixed-icons>
 </template>
 

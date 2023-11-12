@@ -41,7 +41,7 @@ export default{}
             .fixed-item
                 height: 45px
                 width: 45px
-                background: $color-main
+                background: $color-secondary
                 border-radius: $default-radius
                 display: flex
                 justify-content: center
