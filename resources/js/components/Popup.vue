@@ -10,7 +10,7 @@ export default{
 <div class="popup-wrap">
     <div class="container">
         <div class="row">
-            <div class="col-12 col-md-4">
+            <div class="col-12 col-md-4 visible">
                 <div class="popup">
                     <div class="header">
                         <h5 class="mb-0">popup header {{ studio }}</h5>
@@ -41,9 +41,8 @@ export default{
     display: flex
     align-items: center
     .popup
-        visibility: visible
         z-index: 18
-        min-height: 350px
+        min-height: 250px
         overflow: hidden
         border-radius: $default-radius
         .header
