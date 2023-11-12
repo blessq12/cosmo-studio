@@ -51,7 +51,7 @@ export default{
                     enter-active-class="animate__animated animate__flipInX"
                     leave-active-class="animate__animated animate__flipOutX"
                     tag="div"
-                    class="position-relative d-flex w-100 justify-content-center align-items-center"
+                    class="position-relative d-flex justify-content-center align-items-center"
                 >
                     <div class="banner-item text-center position-absolute text-white" v-for="banner in banners" :key="banner.id" v-show="banner.id === currentBanner">
                         <h2>{{ banner.header }}</h2>
@@ -62,7 +62,7 @@ export default{
         </div>
     </div>
     <div class="btn-group">
-        <button type="button" class="btn btn-outline-light btn-sm" @click="currentBanner--" style="transform: rotate(180deg);">→</button>
+        <button type="button" class="btn btn-outline-light btn-sm" @click="currentBanner--">←</button>
         <button type="button" class="btn btn-outline-light btn-sm" @click="currentBanner++">→</button>
     </div>
 </div>
@@ -88,7 +88,7 @@ export default{
     .btn-group
         position: absolute
         width: 100%
-        left: calc(50% - 70px)
+        justify-content: center
         bottom: 10px
         button
             max-width: 70px
