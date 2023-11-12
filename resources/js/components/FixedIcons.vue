@@ -3,11 +3,11 @@ export default{}
 </script>
 
 <template>
-    <div class="fixed-container">
+    <div class="fixed-container invisible">
         <div class="container">
             <div class="row">
                 <div class="col-12 d-flex justify-content-end align-items-center">
-                    <ul>
+                    <ul class="visible" style="z-index: 1;">
                         <li>
                             <div class="fixed-item">
                                 <i class="fa fa-whatsapp fa-2x"></i>

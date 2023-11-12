@@ -27,7 +27,7 @@ export default{
                                         Телефон:
                                         <b><a :href="'tel:'+studio.phone">{{ studio.phone }}</a></b>
                                     </p>
-                                    <button type="button" class="btn btn-success w-100">Записаться</button>
+                                    <button type="button" class="btn btn-success w-100" @click="$emit('toggleOverlay', studio.uri)">Записаться</button>
                                 </div>
                             </div>
                         </li>
