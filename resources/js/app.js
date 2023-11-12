@@ -7,6 +7,7 @@
 import './bootstrap';
 import { createApp } from 'vue';
 import { createPinia } from 'pinia';
+import { vMaska } from 'maska';
 
 /**
  * Next, we will create a fresh Vue application instance. You may then begin
@@ -15,6 +16,7 @@ import { createPinia } from 'pinia';
  */
 
 const app = createApp({});
+app.directive('maska', vMaska);
 app.use(createPinia());
 
 // import App from "./components/App";

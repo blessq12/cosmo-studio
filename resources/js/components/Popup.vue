@@ -1,7 +1,53 @@
 <script>
 export default{
     props:{
-        studio: String
+        currStudio: String
+    },
+    data:()=>({
+        submitAccess: false,
+        formData:{
+            name: '',
+            phone: '',
+            email: ''
+        }
+    }),
+    inject:['company'],
+    methods:{
+        validate(){
+            this.formData.studio = this.currStudio
+            axios.post('/api/send', this.formData)
+            .then(res => {
+                console.log(res)
+            })
+            .catch(err => {
+                console.log(err)
+            })
+        },
+        resetForm(){
+            this.formData = {
+                name: '',
+                phone: '',
+                email: ''
+            }
+        }
+    },
+    watch:{
+        formData:{
+            handler(val){
+                console.log(val)
+                if (val.name !== '' && val.name.length >= 3){
+                    if (val.phone !== '' && val.phone.length === 18){
+                        if (val.email !== '' && val.email.length > 5){
+                            console.log('final step')
+                            this.submitAccess = true
+                            return
+                        }
+                    }
+                }
+                this.submitAccess = false
+            },
+            deep: true
+        }
     }
 }
 </script>
@@ -13,14 +59,45 @@ export default{
             <div class="col-12 col-md-4 visible">
                 <div class="popup">
                     <div class="header">
-                        <h5 class="mb-0">popup header {{ studio }}</h5>
+                        <h5 class="mb-0">
+                            Запись в студию
+                        </h5>
                         <button type="button" class="btn btn-close" style="color: #fff;" @click="$emit('popupToggle')"></button>
                     </div>
                     <div class="content">
-                        form part
+                        <form ref="form">
+                            <div class="form-group">
+                                <label for="studio">Выбор студии</label>
+                                <div class="row g-2">
+                                    <div class="col-6"
+                                        v-for="studio in company.studios"
+                                        :key="studio.id"
+                                    >
+                                        <button type="button" 
+                                            @click="currStudio = studio.uri"
+                                            class="btn w-100"
+                                            :class="currStudio === studio.uri ? 'btn-primary' : 'btn-outline-primary'"
+                                        >{{ studio.address }}</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="name">Введите Имя:</label>
+                                <input type="text" name="name" id="name" class="form-control" autocomplete="name" autofocus required v-model="formData.name">
+                            </div>
+                            <div class="form-group">
+                                <label for="tel">Номер телефона:</label>
+                                <input type="text" name="tel" id="tel" v-maska data-maska="+7 (###) ###-##-##" class="form-control" autocomplete="tel" required v-model="formData.phone">
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email адрес</label>
+                                <input type="email" name="email" id="email" class="form-control" autocomplete="email" required v-model="formData.email">
+                            </div>
+                        </form>
                     </div>
                     <div class="footer">
-                        footer section
+                        <button type="button" :disabled="submitAccess ? false : true " class="btn btn-light" @click="validate()">Отправить </button>
+                        <button type="button" class="btn btn-outline-light mx-2" @click="resetForm">Очистить</button>
                     </div>
                 </div>
             </div>
@@ -29,7 +106,16 @@ export default{
 </div>
 </template>
 
-<style lang="sass">
+<style lang="sass" scoped>
+form
+    label
+        margin-bottom: 6px
+    button
+        font-size: 0.7em !important
+    .form-group
+        margin-bottom: 6px
+
+
 .popup-wrap
     position: fixed
     top: 0
@@ -52,7 +138,6 @@ export default{
             align-items: center
             justify-content: space-between
             font-family: 'optima'
-            text-transform: capitalize
             padding: 16px 12px
         .content
             min-height: 200px

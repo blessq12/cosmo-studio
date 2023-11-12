@@ -62,7 +62,7 @@ export default{
     >
         <popup 
             v-if="popup" 
-            :studio="currStudio" 
+            :currStudio="currStudio" 
             @popupToggle="()=>{ popup = !popup }"
         ></popup>
     </transition>
