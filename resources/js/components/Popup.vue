@@ -42,6 +42,7 @@ export default{
     align-items: center
     .popup
         visibility: visible
+        z-index: 18
         min-height: 350px
         overflow: hidden
         border-radius: $default-radius
