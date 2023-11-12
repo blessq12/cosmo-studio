@@ -50,6 +50,7 @@ export default{
 </script>
 
 <template>
+    <h1 class="invisible d-none">{{ company.name }} {{ company.description }}</h1>
     <transition
         enter-active-class="animate__animated animate__fadeIn"
         leave-active-class="animate__animated animate__fadeOut"
@@ -66,7 +67,7 @@ export default{
             @popupToggle="()=>{ popup = !popup }"
         ></popup>
     </transition>
-    <navbar></navbar>
+    <navbar @toggleOverlay="(studio)=>{ popup = !popup, currStudio = studio }"></navbar>
     <hero-banner></hero-banner>
     <slugs :slugs="slugs"></slugs>
     <studios @toggleOverlay="(studio)=>{ popup = !popup, currStudio = studio }"></studios>

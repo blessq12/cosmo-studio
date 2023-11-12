@@ -24,9 +24,7 @@ export default{
                 </a>
             </div>
             <div class="col-6 d-flex align-itemc-center justify-content-end">
-                <button class="menu-toggler" >
-                    <i class="fa fa-bars fa-2x"></i>
-                </button>
+                <button type="button" class="btn btn-outline-light optima btn-sm" @click="$emit('toggleOverlay', 'lenina')">Запись в студию</button>
             </div>
         </div>
     </div>

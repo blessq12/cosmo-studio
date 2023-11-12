@@ -28,15 +28,15 @@ export default{
                 <div class="accordion" id="accordionExample">
                     <div class="accordion-item" v-for="category in slugs" :key="category.uri">
                         <h2 class="accordion-header" :id="'heading_' + category.uri ">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" :data-bs-target="'#collapse_'+category.uri" aria-expanded="false" :aria-controls="'collapse_' + category.uri">
-                            {{ category.name }}
+                        <button class="accordion-button collapsed optima bold" type="button" data-bs-toggle="collapse" :data-bs-target="'#collapse_'+category.uri" aria-expanded="false" :aria-controls="'collapse_' + category.uri">
+                            {{ category.name }} <span class="text-info mx-2">{{ category.masterCategory !== null ? category.masterCategory : '' }}</span>
                         </button>
                         </h2>
                         <div :id="'collapse_' + category.uri" class="accordion-collapse collapse" :aria-labelledby="'heading_' + category.uri" data-bs-parent="#accordionExample">
                         <div class="accordion-body">
                             <ul class="list-unstyled">
                                 <li v-for="slug in category.slugs" :key="slug.id">
-                                    <h5 class="optima border-bottom mb-4">{{ slug.name }}</h5>
+                                    <p class="optima border-bottom mb-2 pb-2">{{ slug.name }}</p>
                                 </li>
                             </ul>
                         </div>

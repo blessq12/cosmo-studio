@@ -5,6 +5,7 @@ export default{
     },
     data:()=>({
         submitAccess: false,
+        sendSuccess: false,
         formData:{
             name: '',
             phone: '',
@@ -17,7 +18,13 @@ export default{
             this.formData.studio = this.currStudio
             axios.post('/api/send', this.formData)
             .then(res => {
-                console.log(res)
+                if (res.data.status){
+                    this.sendSuccess = !this.sendSuccess
+                    setTimeout(()=>{
+                        this.sendSuccess = !this.sendSuccess
+                        this.$emit('popupToggle')
+                    },3000)
+                }
             })
             .catch(err => {
                 console.log(err)
@@ -65,35 +72,51 @@ export default{
                         <button type="button" class="btn btn-close" style="color: #fff;" @click="$emit('popupToggle')"></button>
                     </div>
                     <div class="content">
-                        <form ref="form">
-                            <div class="form-group">
-                                <label for="studio">Выбор студии</label>
-                                <div class="row g-2">
-                                    <div class="col-6"
-                                        v-for="studio in company.studios"
-                                        :key="studio.id"
-                                    >
-                                        <button type="button" 
-                                            @click="currStudio = studio.uri"
-                                            class="btn w-100"
-                                            :class="currStudio === studio.uri ? 'btn-primary' : 'btn-outline-primary'"
-                                        >{{ studio.address }}</button>
+                        <transition
+                            enter-active-class="animate__animated animate__fadeIn"
+                            leave-active-class="animate__animated animate__fadeOut"
+                            mode="out-in"
+                        >
+                            <div v-if="!sendSuccess">
+                                <form ref="form">
+                                <div class="form-group">
+                                    <label for="studio">Выбор студии</label>
+                                    <div class="row g-2">
+                                        <div class="col-6"
+                                            v-for="studio in company.studios"
+                                            :key="studio.id"
+                                        >
+                                            <button type="button" 
+                                                @click="currStudio = studio.uri"
+                                                class="btn w-100"
+                                                :class="currStudio === studio.uri ? 'btn-primary' : 'btn-outline-primary'"
+                                            >{{ studio.address }}</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="name">Введите Имя:</label>
+                                    <input type="text" name="name" id="name" class="form-control" autocomplete="name" autofocus required v-model="formData.name">
+                                </div>
+                                <div class="form-group">
+                                    <label for="tel">Номер телефона:</label>
+                                    <input type="text" name="tel" id="tel" v-maska data-maska="+7 (###) ###-##-##" class="form-control" autocomplete="tel" required v-model="formData.phone">
+                                </div>
+                                <div class="form-group">
+                                    <label for="email">Email адрес</label>
+                                    <input type="email" name="email" id="email" class="form-control" autocomplete="email" required v-model="formData.email">
+                                </div>
+                                </form>
+                            </div>
+                            <div v-else>
+                                <div class="d-flex align-items-center justify-content-center p-3">
+                                    <div class="text-center">
+                                        <img src="/assets/images/success_send.png" alt="alt" class="img-fluid">
+                                        <h5 class="optima mt-3">Спасибо, что выбрали нас</h5>
                                     </div>
                                 </div>
                             </div>
-                            <div class="form-group">
-                                <label for="name">Введите Имя:</label>
-                                <input type="text" name="name" id="name" class="form-control" autocomplete="name" autofocus required v-model="formData.name">
-                            </div>
-                            <div class="form-group">
-                                <label for="tel">Номер телефона:</label>
-                                <input type="text" name="tel" id="tel" v-maska data-maska="+7 (###) ###-##-##" class="form-control" autocomplete="tel" required v-model="formData.phone">
-                            </div>
-                            <div class="form-group">
-                                <label for="email">Email адрес</label>
-                                <input type="email" name="email" id="email" class="form-control" autocomplete="email" required v-model="formData.email">
-                            </div>
-                        </form>
+                        </transition>
                     </div>
                     <div class="footer">
                         <button type="button" :disabled="submitAccess ? false : true " class="btn btn-light" @click="validate()">Отправить </button>
