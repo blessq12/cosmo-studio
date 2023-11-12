@@ -4,21 +4,21 @@ export default{
         banners:[
             {
                 id: 1,
-                background: '//via.placeholder.com/1920x1080',
-                header: 'Some Heaxder 1',
-                sub: 'subheader under header 1'
+                background: 'https://www.shutterstock.com/image-photo/female-beauty-salon-owner-working-600nw-2198624369.jpg',
+                header: 'Студия красоты Cosmo',
+                sub: 'Много видов услуг по доступным ценам в нашем городе'
             },
             {
                 id: 2,
-                background: '//via.placeholder.com/1979x1079',
-                header: 'Some Heaxder 2',
-                sub: 'subheader under header 2'
+                background: 'https://watermark.lovepik.com/photo/20211208/large/lovepik-nail-salon-scene-nail-studio-picture_501680461.jpg',
+                header: 'Ногтевая студия Cosmo',
+                sub: 'Подбор ииндивидуальных решений для вас'
             },
             {
                 id: 3,
-                background: '//via.placeholder.com/1979x1079',
-                header: 'Some Heaxder 3',
-                sub: 'subheader under header 3'
+                background: 'https://images.squarespace-cdn.com/content/v1/6230a11474b83231a7f54f4f/7586631f-f1b0-4ea0-b4a6-c920a98e6906/Below+Hair+Studio.jpg',
+                header: 'Парикмахерские услуги в салоне красоты Cosmo',
+                sub: 'Все виды парикмахерских услуг, от стрижек до сложных окрашиваний в одной студии'
             }
         ],
         currentBanner: 1
@@ -26,6 +26,9 @@ export default{
     computed:{
         bannerQty(){
             return this.banners.length
+        },
+        bannerBackground(){
+            return this.banners[this.currentBanner - 1].background
         }
     },
     watch:{
@@ -42,7 +45,7 @@ export default{
 </script>
 
 <template>
-<div class="hero-banner" style="background: url('//via.placeholder.com/1920x1080');">
+<div class="hero-banner" :style="'background: url(' + bannerBackground + ');'">
     <div class="overlay"></div>
     <div class="container">
         <div class="row">
@@ -78,6 +81,7 @@ export default{
     background-size: cover !important
     background-repeat: no-repeat !important
     position: relative
+    font-family: 'optima'
     .overlay
         position: absolute
         top: 0
@@ -89,7 +93,7 @@ export default{
         position: absolute
         width: 100%
         justify-content: center
-        bottom: 10px
+        bottom: 30px
         button
             max-width: 70px
 </style>

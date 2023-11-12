@@ -17,7 +17,8 @@ export default{
                 <div class="col-12">
                     <ul class="studio-list list-unstyled">
                         <li v-for="studio in company.studios" :key="studio.id">
-                            <div class="studio-item px-2 py-3" style="background: url('//via.placeholder.com/350x600');">
+                            
+                            <div class="studio-item px-2 py-3" :style="'background: url('+ studio.image +');'">
                                 <div class="overlay"></div>
                                 <div class="position-relative text-light w-100">
                                     <p class="mb-2">

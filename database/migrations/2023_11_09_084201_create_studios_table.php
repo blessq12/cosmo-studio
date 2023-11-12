@@ -17,6 +17,7 @@ return new class extends Migration
             $table->string('uri');
             $table->foreignIdFor(Company::class);
             $table->string('phone');
+            $table->string('image');
             $table->string('address');
             $table->text('navYandex');
             $table->timestamps();
