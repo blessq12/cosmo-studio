@@ -19,6 +19,9 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        //
+        $this->loadViewsFrom(resource_path('views/layouts'), 'layouts');
+        $this->loadViewsFrom(resource_path('views/includes'), 'includes');
+        $this->loadViewsFrom(resource_path('views/front'), 'front');
+        $this->loadViewsFrom(resource_path('views/crm'), 'crm');
     }
 }
