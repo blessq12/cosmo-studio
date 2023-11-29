@@ -1,11 +1,13 @@
 <script>
 export default{
     props:{
-        company: Object
+        company: Object,
+        slugs: Object
     },
     provide(){
         return{
-            company: this.company
+            company: this.company,
+            slugs: this.slugs
         }
     }
 }
@@ -16,6 +18,9 @@ export default{
     <hero-banner></hero-banner>
     <section>
         <about></about>
+    </section>
+    <section>
+        <slugs></slugs>
     </section>
 </template>
 

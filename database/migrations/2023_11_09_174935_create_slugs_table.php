@@ -16,7 +16,6 @@ return new class extends Migration
             $table->id();
             $table->foreignIdFor(SlugCategory::class);
             $table->string('name');
-            $table->string('image')->default('/assets/images/placeholders/512x512.png');
             $table->string('price');
             $table->string('executeTime');
             $table->timestamps();
