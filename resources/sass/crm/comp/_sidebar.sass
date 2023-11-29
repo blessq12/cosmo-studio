@@ -1,0 +1,36 @@
+.sidebar
+    h3
+        font-size: 2rem
+    ul
+        list-style: none
+        padding: 0
+        margin: 0
+        li
+            display: block
+            width: 100%
+            position: relative
+            overflow: hidden
+            margin-bottom: 24px
+            &::before
+                transition: all .5s
+                content: ''
+                position: absolute
+                width: 100%
+                height: 100%
+                display: block
+                background: $color-main
+                z-index: 0
+                transform: translateX(-98%)
+            &:hover::before
+                transform: translateX(0)
+            &:hover a
+                color: $color-white
+            a
+                position: relative
+                text-decoration: none
+                color: $color-dark
+                width: 100%
+                font-size: 1.5rem
+                display: block
+                padding: 12px 24px
+                transition: all .3s

@@ -11,6 +11,17 @@
 </head>
 <body>
     <div id="app">
+        <x-crm.navbar></x-crm.navbar>
+        <div class="container py-5">
+            <div class="row">
+                <div class="col-12 col-lg-3">
+                    <x-crm.sidebar></x-crm.sidebar>
+                </div>
+                <div class="col-12 col-lg-9">
+                    @yield('content')
+                </div>
+            </div>
+        </div>
         @yield('content')
     </div>
 </body>

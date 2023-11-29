@@ -17,7 +17,8 @@ class DatabaseSeeder extends Seeder
             StudioSeeder::class,
             WorkHourSeeder::class,
             SlugCategorySeeder::class,
-            SlugSeeder::class
+            SlugSeeder::class,
+            UserSeeder::class
         ]);
     }
 }

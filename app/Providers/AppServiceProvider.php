@@ -23,5 +23,6 @@ class AppServiceProvider extends ServiceProvider
         $this->loadViewsFrom(resource_path('views/includes'), 'includes');
         $this->loadViewsFrom(resource_path('views/front'), 'front');
         $this->loadViewsFrom(resource_path('views/crm'), 'crm');
+        $this->loadViewsFrom(resource_path('views/auth'), 'auth');
     }
 }
