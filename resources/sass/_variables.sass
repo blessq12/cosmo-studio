@@ -7,15 +7,19 @@ $nav-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3p
 
 $default-radius: 10px
 
+h1,h2,h3,h4,h5,h6
+    font-family: optima
 
 p
-    line-height: 1.1
+    font-family: blogger
+    line-height: 1.08
+
 section
     padding: 24px 0
     
 :root
     --animate-duration: .6s
-
+    --bs-primary: $color-main
 @font-face
     font-family: 'Optima'
     src: url('/resources/fonts/Optima-Bold.woff') format(woff)
@@ -25,6 +29,9 @@ section
     font-family: 'Optima'
     src: url('/resources/fonts/Optima-Regular.woff') format(woff)
     font-weight: Bold
+@font-face
+    font-family: blogger
+    src: url(/resources/fonts/Blogger_Sans-Light.woff) format(woff)
 
 .optima
     font-family: "Optima" !important

@@ -14,6 +14,9 @@ export default{
 <template>
     <navbar></navbar>
     <hero-banner></hero-banner>
+    <section>
+        <about></about>
+    </section>
 </template>
 
 <style lang="sass"></style>

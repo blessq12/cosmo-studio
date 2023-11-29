@@ -950,3 +950,15 @@
 127.0.0.1 - - [30/Nov/2023:01:06:37 +0700] "GET /build/assets/app-ec800f5c.css HTTP/1.1" 200 875
 127.0.0.1 - - [30/Nov/2023:01:06:37 +0700] "GET /build/assets/app-8e8f0ad9.css HTTP/1.1" 200 921
 127.0.0.1 - - [30/Nov/2023:01:06:37 +0700] "GET /build/assets/app-debc8f0f.js HTTP/1.1" 200 260202
+127.0.0.1 - - [30/Nov/2023:01:17:21 +0700] "GET / HTTP/1.1" 200 3224
+127.0.0.1 - - [30/Nov/2023:01:17:22 +0700] "GET /uploads/banner-1.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [30/Nov/2023:01:22:33 +0700] "GET /uploads/banner-2.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [30/Nov/2023:01:31:15 +0700] "GET / HTTP/1.1" 200 3224
+127.0.0.1 - - [30/Nov/2023:01:31:17 +0700] "GET /uploads/banner-1.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [30/Nov/2023:01:31:19 +0700] "GET /uploads/banner-2.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [30/Nov/2023:01:31:20 +0700] "GET /uploads/banner-3.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [30/Nov/2023:01:37:35 +0700] "GET / HTTP/1.1" 200 3224
+127.0.0.1 - - [30/Nov/2023:01:37:35 +0700] "GET /uploads/banner-1.jpg HTTP/1.1" 200 123300
+127.0.0.1 - - [30/Nov/2023:01:37:47 +0700] "GET /uploads/banner-2.jpg HTTP/1.1" 200 146183
+127.0.0.1 - - [30/Nov/2023:01:37:49 +0700] "GET /uploads/banner-3.jpg HTTP/1.1" 200 173518
+127.0.0.1 - - [30/Nov/2023:01:40:10 +0700] "GET /uploads/banner-3.jpg HTTP/1.1" 304 -

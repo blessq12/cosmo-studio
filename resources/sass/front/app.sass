@@ -7,7 +7,22 @@
 // @import 'font-awesome'
 
 section
-    padding: 48px 0
+    padding: 48px 0 !important
+
+.section-title
+    h5
+        padding-left: 12px
+        color: $color-main
+        font-size: 1rem
+        @media (min-width: 768px)
+            font-size: 1.4rem
+        margin-bottom: 0
+    h2
+        border-left: 4px solid $color-main
+        padding-left: 12px
+        font-size: 1.3rem
+        @media (min-width: 768px)
+            font-size: 2rem
 
 .bg-image-cover
     background-position: center !important
@@ -18,3 +33,4 @@ section
     background-position: center !important
     background-size: contain !important
     background-repeat: no-repeat !important
+
