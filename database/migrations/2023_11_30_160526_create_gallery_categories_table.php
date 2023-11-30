@@ -1,6 +1,5 @@
 <?php
 
-use App\Models\SlugCategory;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -12,12 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('slugs', function (Blueprint $table) {
+        Schema::create('gallery_categories', function (Blueprint $table) {
             $table->id();
-            $table->foreignIdFor(SlugCategory::class);
+            $table->string('uri');
             $table->string('name');
-            $table->string('lPrice')->nullable();
-            $table->string('hPrice')->nullable();
             $table->timestamps();
         });
     }
@@ -27,6 +24,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('slugs');
+        Schema::dropIfExists('gallery_categories');
     }
 };

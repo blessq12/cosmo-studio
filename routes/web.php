@@ -1,7 +1,9 @@
 <?php
 use App\Http\Controllers\CrmController;
+use App\Http\Controllers\GalleryController;
 use App\Http\Controllers\IndexController;
 use App\Http\Controllers\UserController;
+use App\Models\GalleryCategory;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -31,7 +33,8 @@ Route::middleware('auth')->group(function(){
     Route::controller(CrmController::class)->prefix('crm')->name('crm.')->group(function(){
 
         Route::get('/', 'index')->name('index');
-
+        Route::post('/gallesries/store-image', [GalleryController::class, 'storeImage'])->name('galleries.store-image');
+        Route::resource('galleries', GalleryController::class);
         
 
     });

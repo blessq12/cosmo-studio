@@ -4,7 +4,7 @@
         (object)['name' => 'Клиенты', 'route' => 'crm.index'],
         (object)['name' => 'Заявки', 'route' => 'crm.index'],
         (object)['name' => 'Баннеры', 'route' => 'crm.index'],
-        (object)['name' => 'Готовые работы', 'route' => 'crm.index'],
+        (object)['name' => 'Готовые работы', 'route' => 'crm.galleries.index'],
         (object)['name' => 'Выйти', 'route' => 'user.user-logout'],
     ]
     

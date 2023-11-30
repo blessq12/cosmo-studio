@@ -18,11 +18,11 @@
                     <x-crm.sidebar></x-crm.sidebar>
                 </div>
                 <div class="col-12 col-lg-9">
+                    <h2>@yield('title')</h2>
                     @yield('content')
                 </div>
             </div>
         </div>
-        @yield('content')
     </div>
 </body>
 </html>

@@ -24,12 +24,20 @@ export default{
         <div class="col-12">
             <div class="gallery" v-for="gallery in galleries">
                 <h4>{{ gallery.name }}</h4>
-                <div class="next" @click="()=>{
-                    $refs[gallery.uri][0].scrollLeft += 312
-                }">
-                    <i class="fa fa-arrow-right">
-                    </i>
+                <div class="gallery-nav d-flex justify-content-end">
+                    <div class="prev" @click="()=>{
+                        $refs[gallery.uri][0].scrollLeft -= 312
+                    }">
+                        <i class="fa fa-arrow-left">
+                        </i>
+                    </div>
+                    <div class="next" @click="()=>{
+                        $refs[gallery.uri][0].scrollLeft += 312
+                    }">
+                        <i class="fa fa-arrow-right"></i>
+                    </div>
                 </div>
+                
                 <hr class="mt-0">
                 <ul :ref="gallery.uri" :id="gallery.uri">
                     <li v-for="image in gallery.images">
@@ -43,6 +51,11 @@ export default{
 </template>
 
 <style lang="sass">
+.gallery-nav
+    .prev
+        margin-right: 12px
+    .next
+        
 .gallery
     margin-bottom: 24px
     position: relative

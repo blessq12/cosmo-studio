@@ -14,13 +14,12 @@ class SlugCategorySeeder extends Seeder
     public function run(): void
     {
         DB::table('slug_categories')->insert([
-            ['uri' => 'nails', 'name' => 'Маникюр/педикюр', 'masterCategory' => '!Топ-мастер'],
-            ['uri' => 'nails2', 'name' => 'Маникюр/педикюр', 'masterCategory' => 'Мастер'],
-            ['uri' => 'barber', 'name' => 'Стрижки', 'masterCategory' => null],
-            ['uri' => 'color', 'name' => 'Окрашивания', 'masterCategory' => null],
-            ['uri' => 'mans', 'name' => 'Мужской зал', 'masterCategory' => null],
-            ['uri' => 'browsLashes', 'name' => 'Брови и ресницы', 'masterCategory' => null],
-            ['uri' => 'hairExtension', 'name' => 'Наращивание волос', 'masterCategory' => null],
+            ['uri' => 'nails', 'name' => 'Маникюр'],
+            ['uri' => 'foot-nails', 'name' => 'Педикюр'],
+            ['uri' => 'box', 'name' => 'Бокс в 4 - 6 рук (1 - 2 часа занятости)'],
+            ['uri' => 'hairs', 'name' => 'Парикмахерская'],
+            ['uri' => 'brow-n-lashes', 'name' => 'Оформление бровей и ресниц'],
+            ['uri' => 'makeup', 'name' => 'Макияж, прически'],
         ]);
     }
 }

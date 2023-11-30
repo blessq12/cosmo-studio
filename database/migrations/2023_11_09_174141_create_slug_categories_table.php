@@ -15,7 +15,6 @@ return new class extends Migration
             $table->id();
             $table->string('uri');
             $table->string('name');
-            $table->string('masterCategory')->nullable();
             $table->timestamps();
         });
     }

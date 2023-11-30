@@ -28,6 +28,7 @@ export default{
     <section>
         <gallery></gallery>
     </section>
+    <Footer></Footer>
 </template>
 
 <style lang="sass"></style>

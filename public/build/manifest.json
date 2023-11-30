@@ -12,7 +12,7 @@
     "src": "resources/fonts/Optima-Regular.woff"
   },
   "resources/js/app.css": {
-    "file": "assets/app-3939d481.css",
+    "file": "assets/app-18994bc7.css",
     "src": "resources/js/app.css"
   },
   "resources/js/app.js": {
@@ -22,14 +22,14 @@
       "assets/Blogger_Sans-Light-b1a99ec8.woff"
     ],
     "css": [
-      "assets/app-3939d481.css"
+      "assets/app-18994bc7.css"
     ],
-    "file": "assets/app-30322b09.js",
+    "file": "assets/app-7a455c14.js",
     "isEntry": true,
     "src": "resources/js/app.js"
   },
   "resources/sass/crm/app.sass": {
-    "file": "assets/app-40092d56.css",
+    "file": "assets/app-7fcd18ad.css",
     "isEntry": true,
     "src": "resources/sass/crm/app.sass"
   },
