@@ -1,9 +1,15 @@
 <script>
+import { callWithAsyncErrorHandling } from 'vue';
+
 export default{
     props:{
+        duration: String
     },
     inject:['company'],
     mounted(){
+        setInterval(()=>{
+            this.current++
+        }, this.duration)
     },
     data:()=>({
         current: 0,
@@ -12,7 +18,17 @@ export default{
             {id: 2, text: 'Скидка 300 рублей на первый визит. Комплекс Маникюр с покрытиием гель-лак и снятием от 1100 рублей до 1500 рублей', image: '/uploads/banner-2.jpg'},
             {id: 2, text: 'Только в декабре при визите на маникюр с покрытием — коррекция бровей в подарок', image: '/uploads/banner-3.jpg'},
         ]
-    })
+    }),
+    watch:{
+        current(val,old){
+            if (val == this.banners.length){
+                this.current = 0
+            }
+            if (val < 0){
+                this.current = this.banners.length - 1
+            }
+        }
+    },
 }
 </script>
 
@@ -49,10 +65,10 @@ export default{
 </div>
 <div class="d-flex justify-content-center position-relative">
     <div class="slider-nav">
-        <button type="button" @click="current < 1 ? current = banners.length -1 : current--" class="btn text-white">
+        <button type="button" @click="current--" class="btn text-white">
             <i class="fa fa-arrow-left"></i>
         </button>
-        <button type="button" @click="current == banners.length - 1 ? current = 0 : current++" class="btn text-white">
+        <button type="button" @click="current++" class="btn text-white">
             <i class="fa fa-arrow-right"></i>
         </button>
     </div>

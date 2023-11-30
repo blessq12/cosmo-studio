@@ -15,7 +15,7 @@ export default{
 
 <template>
     <navbar></navbar>
-    <hero-banner></hero-banner>
+    <hero-banner duration="3000"></hero-banner>
     <section>
         <about></about>
     </section>
@@ -24,6 +24,9 @@ export default{
     </section>
     <section class="pt-0">
         <studios></studios>
+    </section>
+    <section>
+        <gallery></gallery>
     </section>
 </template>
 

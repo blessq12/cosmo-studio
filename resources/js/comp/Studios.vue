@@ -57,13 +57,13 @@ export default{
     &::-webkit-scrollbar
         display: none
     li
-        margin-right: 16px
+        margin-right: 12px
         .studio 
             background-position: center !important
             background-size: cover !important
             background-repeat: no-repeat !important
             position: relative
-            height: 320px
+            height: 380px
             width: 320px
             background: $color-main
             overflow: hidden
@@ -85,4 +85,7 @@ export default{
                 h5
                     font-size: .85rem
                     margin-bottom: 0
+                h3
+                    @media(min-width: 1200px)
+                        font-size: 1.55rem
 </style>
