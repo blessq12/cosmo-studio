@@ -19,8 +19,11 @@ export default{
     <section>
         <about></about>
     </section>
-    <section>
+    <section class="pt-0">
         <slugs></slugs>
+    </section>
+    <section class="pt-0">
+        <studios></studios>
     </section>
 </template>
 
