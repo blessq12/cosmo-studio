@@ -82,6 +82,16 @@ class GalleryController extends Controller
 
         return back()->with('success', 'Успешно загружено');
     }
+
+    /**
+     * Destroy single image row.
+     */
+    public function destroyImage(string $galleryId, string $id){
+        $gallery = GalleryCategory::findOrFail($galleryId);
+        $gallery->images()->find($id)->delete();
+
+        return back()->with('success', 'Фотография успешно удалена');
+    }
     /**
      * Display the specified resource.
      */

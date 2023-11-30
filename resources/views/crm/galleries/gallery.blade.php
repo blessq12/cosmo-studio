@@ -4,7 +4,7 @@
 @section('content')
     <div class="row mb-2">
         <div class="col">
-            <a href="{{ url()->previous() }}" class="text-decoration-none">
+            <a href="{{ route('crm.galleries.index') }}" class="text-decoration-none">
                 <i class="fa fa-arrow-left mx-2"></i>
                 Назад к галереям
             </a>
@@ -19,7 +19,7 @@
             </div>
         </div>
     @endif
-    <div class="row">
+    <div class="row mb-4">
         <div class="col-12">
             <div class="accordion">
                 <div class="accordion-item">
@@ -52,9 +52,26 @@
             </div>
         </div>
     </div>
-    <div class="row">
-        <div class="col-12">
-            {{ $images }}
+    @if ($images->isEmpty())
+        <div class="row">
+            <div class="col-12">
+                <p>Ни одной фотографии в галерею "{{ $gallery->name }}" еще не загружено</p>
+            </div>
         </div>
+    @endif
+    <div class="row row-cols-4">
+        @foreach ($images as $image)
+            <div class="col mb-4">
+                <div class="gallery-img position-relative overflow-hidden rounded p-2" style="min-height: 250px">
+                    <form action="{{ route('crm.galleries.destroy-image', [$gallery->id, $image->id]) }}" method="post">
+                        @csrf @method('DELETE')
+                        <button type="submit" class="btn btn-danger position-absolute" style="z-index: 1">
+                            <i class="fa fa-trash"></i>
+                        </button>
+                    </form>
+                    <img src="{{ $image->path }}" alt="" class="position-absolute w-100" style="top: 0; left: 0">
+                </div>
+            </div>
+        @endforeach
     </div>
 @endsection

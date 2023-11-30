@@ -34,6 +34,7 @@ Route::middleware('auth')->group(function(){
 
         Route::get('/', 'index')->name('index');
         Route::post('/gallesries/store-image', [GalleryController::class, 'storeImage'])->name('galleries.store-image');
+        Route::delete('/gallesries/destroy-image/{galleryId}/{id}', [GalleryController::class, 'destroyImage'])->name('galleries.destroy-image');
         Route::resource('galleries', GalleryController::class);
         
 
