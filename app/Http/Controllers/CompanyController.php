@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Company;
 use Illuminate\Http\Request;
 
 class CompanyController extends Controller
@@ -11,7 +12,9 @@ class CompanyController extends Controller
      */
     public function index()
     {
-        //
+        return view('crm::companies.index',[
+            'company' => Company::first()
+        ]);
     }
 
     /**
@@ -51,7 +54,10 @@ class CompanyController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $company = Company::findOrFail($id);
+        $company->update($request->except(['_token', '_method']));
+        $company->save();
+        return back()->with('success', 'Данные обновлены');
     }
 
     /**

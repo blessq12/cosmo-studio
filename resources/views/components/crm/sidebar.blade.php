@@ -1,6 +1,6 @@
 @php
     $links = [
-        (object)['name' => 'Дашборд', 'route' => 'crm.index'],
+        (object)['name' => 'Основное', 'route' => 'crm.companies.index'],
         (object)['name' => 'Баннеры', 'route' => 'crm.banners.index'],
         (object)['name' => 'Студии', 'route' => 'crm.studios.index'],
         (object)['name' => 'Готовые работы', 'route' => 'crm.galleries.index'],

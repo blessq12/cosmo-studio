@@ -14,8 +14,7 @@ return new class extends Migration
         Schema::create('companies', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->string('nameAdd');
-            $table->string('description');
+            $table->string('desc');            
             $table->string('email');
             $table->string('vkLink');
             $table->string('acc2gis');
