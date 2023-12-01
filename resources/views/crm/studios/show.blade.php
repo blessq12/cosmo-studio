@@ -49,10 +49,11 @@
                     <div class="input-group">
                         <input type="hidden" name="studioId" value="{{ $studio->id }}">
                         <input type="file" name="image" id="image" class="form-control" required>
-                        <button type="submit" class="input-group-text">
-                            <i class="fa fa-upload"></i>
-                        </button>
                     </div>
+                    <button type="submit" class="btn btn-primary w-100 mt-3">
+                        <i class="fa fa-upload"></i>
+                        Загрузить
+                    </button>
                 </form>
             @else
                 <img src="{{ $studio->image->path }}" alt="" class="img-fluid rounded">

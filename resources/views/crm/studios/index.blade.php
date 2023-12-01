@@ -16,7 +16,7 @@
                     <div class="accordion-collapse collapse" id="createNew">
                         <div class="accordion-body">
                             <form action="{{ route('crm.studios.store') }}" method="post" enctype="multipart/form-data">
-                                
+                                @csrf
                                 <div class="row row-cols-2 mb-4">
                                     <div class="col">
                                         <div class="form-group">
@@ -25,16 +25,16 @@
                                         </div>
                                     </div>
                                     <div class="col">
-                                        <label for="tel">Номер телефона</label>
-                                        <input type="text" name="tel" id="tel" class="form-control" required>
+                                        <label for="phone">Номер телефона</label>
+                                        <input type="text" name="phone" id="phone" class="form-control" required>
                                     </div>
                                 </div>
 
                                 <div class="row row-cols-2">
                                     <div class="col">
                                         <div class="form-group">
-                                            <label for="yandexNav">Сылка на маршрут</label>
-                                            <input type="text" name="yandexNav" id="yandexNav" class="form-control" required>
+                                            <label for="navYandex">Ссылка на маршрут</label>
+                                            <input type="text" name="navYandex" id="navYandex" class="form-control" placeholder="Необязательно">
                                         </div>
                                     </div>
                                     <div class="col">
@@ -59,8 +59,10 @@
     </div>
     <div class="row">
         @if (session('success'))
-            <div class="alert alert-success">
-                {{ session('success') }}
+            <div class="col-12">
+                <div class="alert alert-success">
+                    {{ session('success') }}
+                </div>
             </div>
         @endif
         @if ($studios->isEmpty())
@@ -70,7 +72,7 @@
         @else
             <div class="col-12 row row-cols-3">
                 @foreach ($studios as $studio)
-                    <div class="col">
+                    <div class="col mb-4">
                         <div class="studio w-100 position-relative rounded overflow-hidden p-3 bg-secondary" style="height:250px">
                             <div class="position-absolute d-flex" style="z-index: 10">
                                 <a href="{{ route('crm.studios.show', $studio->id) }}" class="fa fa-pencil btn btn-primary"></a>

@@ -8,7 +8,13 @@ use Illuminate\Database\Eloquent\Model;
 class Studio extends Model
 {
     use HasFactory;
-
+    protected $fillable = [
+        'uri',
+        'company_id',
+        'phone',
+        'address',
+        'navYandex'
+    ];
     public function workHours(){
         return $this->hasMany(WorkHour::class);
     }

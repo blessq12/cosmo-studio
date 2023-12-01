@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Studio;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
+use Nette\Utils\Random;
 
 class StudioController extends Controller
 {
@@ -31,7 +32,25 @@ class StudioController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $studio = new Studio([
+            'company_id' => 1,
+            'uri' => Random::generate(),
+            'phone' => $request->phone,
+            'address' => $request->address,
+            'navYandex' => $request->navYandex
+        ]);
+
+        if (!$studio->save()){
+            return back()->with('danger', 'Не удалось сохдать студию.');
+        }
+        
+        $imageName = 'studio-' . Studio::latest()->first()->id . '.' . $request->file('image')->getClientOriginalExtension();
+
+        $request->file('image')->storeAs('public/uploads/studios', $imageName);
+
+        $studio->image()->create(['path' => '/uploads/studios/' . $imageName]);
+        
+        return back()->with('success', 'Студия создана');
     }
 
     /**

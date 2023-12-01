@@ -18,7 +18,7 @@ return new class extends Migration
             $table->foreignIdFor(Company::class);
             $table->string('phone');
             $table->string('address');
-            $table->text('navYandex');
+            $table->text('navYandex')->nullable();
             $table->timestamps();
         });
     }
