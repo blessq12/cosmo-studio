@@ -1,0 +1,2 @@
+[Fri Dec 01 20:59:40.497140 2023] [core:error] [pid 10331] [client 127.0.0.1:58982] AH00037: Symbolic link not allowed or link target not accessible: /usr/local/var/www/cosmo.dd/public/uploads, referer: http://cosmo.dd/crm/galleries/1
+[Fri Dec 01 20:59:41.445939 2023] [core:error] [pid 10331] [client 127.0.0.1:58982] AH00037: Symbolic link not allowed or link target not accessible: /usr/local/var/www/cosmo.dd/public/uploads, referer: http://cosmo.dd/crm/galleries/1

@@ -23,6 +23,10 @@
                 transform: translateX(-98%)
             &:hover::before
                 transform: translateX(0)
+            &.active::before
+                transform: translateX(0%) !important
+            &.active a
+                color: $color-white
             &:hover a
                 color: $color-white
             a

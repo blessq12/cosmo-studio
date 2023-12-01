@@ -1,7 +1,9 @@
 <?php
+use App\Http\Controllers\BannerController;
 use App\Http\Controllers\CrmController;
 use App\Http\Controllers\GalleryController;
 use App\Http\Controllers\IndexController;
+use App\Http\Controllers\StudioController;
 use App\Http\Controllers\UserController;
 use App\Models\GalleryCategory;
 use Illuminate\Support\Facades\Route;
@@ -35,8 +37,12 @@ Route::middleware('auth')->group(function(){
         Route::get('/', 'index')->name('index');
         Route::post('/gallesries/store-image', [GalleryController::class, 'storeImage'])->name('galleries.store-image');
         Route::delete('/gallesries/destroy-image/{galleryId}/{id}', [GalleryController::class, 'destroyImage'])->name('galleries.destroy-image');
+        
         Route::resource('galleries', GalleryController::class);
         
+        Route::post('/studios/store-image', [StudioController::class, 'storeImage'])->name('studios.store-image');
+        Route::resource('studios', StudioController::class);
 
+        Route::resource('banners', BannerController::class);
     });
 });
