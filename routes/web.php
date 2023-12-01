@@ -1,5 +1,6 @@
 <?php
 use App\Http\Controllers\BannerController;
+use App\Http\Controllers\CompanyController;
 use App\Http\Controllers\CrmController;
 use App\Http\Controllers\GalleryController;
 use App\Http\Controllers\IndexController;
@@ -45,5 +46,6 @@ Route::middleware('auth')->group(function(){
         Route::resource('studios', StudioController::class);
 
         Route::resource('banners', BannerController::class);
+        Route::resource('companies', CompanyController::class);
     });
 });

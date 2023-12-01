@@ -3,18 +3,15 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Banner;
 
-class BannerController extends Controller
+class CompanyController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        return view('crm::banners.index',[
-            'banners' => Banner::all()
-        ]);
+        //
     }
 
     /**
@@ -22,7 +19,7 @@ class BannerController extends Controller
      */
     public function create()
     {
-        return view('crm::banners.create');
+        //
     }
 
     /**
@@ -30,21 +27,7 @@ class BannerController extends Controller
      */
     public function store(Request $request)
     {
-        $banner = new Banner([
-            'header' => $request->header,
-            'subheader' => $request->subheader
-        ]);
-        
-        if (!$banner->save()){
-            return back()->withErrors(['save' => 'Не удалось создать баннер']);
-        }
-        
-        $imageName = 'banner-' . Banner::latest()->first()->id . '.' . $request->file('image')->getClientOriginalExtension();
-        $request->file('image')->storeAs('public/uploads/banners', $imageName);
-
-        $banner->image()->create(['path' => '/uploads/banners/' . $imageName]);
-
-        return back()->with('success', 'Баннер успешно создан');
+        //
     }
 
     /**

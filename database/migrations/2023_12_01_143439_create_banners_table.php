@@ -13,8 +13,8 @@ return new class extends Migration
     {
         Schema::create('banners', function (Blueprint $table) {
             $table->id();
-            $table->string('header');
-            $table->string('subheader');
+            $table->text('header');
+            $table->text('subheader')->nullable();
             $table->timestamps();
         });
     }
