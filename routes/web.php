@@ -41,6 +41,7 @@ Route::middleware('auth')->group(function(){
         Route::resource('galleries', GalleryController::class);
         
         Route::post('/studios/store-image', [StudioController::class, 'storeImage'])->name('studios.store-image');
+        Route::delete('/studios/destroy-image/{studioId}/{id}', [StudioController::class, 'destroyImage'])->name('studios.destroy-image');
         Route::resource('studios', StudioController::class);
 
         Route::resource('banners', BannerController::class);

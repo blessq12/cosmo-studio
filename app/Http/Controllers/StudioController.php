@@ -83,4 +83,10 @@ class StudioController extends Controller
 
         return back()->with('success', 'Фотография загружена');
     }
+
+    public function destroyImage(string $studioId, string $id){
+        $studio = Studio::findOrFail($studioId);
+        $studio->image()->find($id)->delete();
+        return back()->with('success', 'Фотография удалена');
+    }
 }

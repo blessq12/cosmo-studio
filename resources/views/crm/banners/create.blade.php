@@ -12,8 +12,9 @@
         </div>
     </div>
     <div class="row row-cols-1 row-cols-md-2">
-        <div class="col">asdasd</div>
-        <div class="col">asdasd</div>
-        <div class="col">asdasd</div>
+        <form action="{{ route('crm.banners.store') }}" method="post">
+            @csrf
+            
+        </form>
     </div>
 @endsection

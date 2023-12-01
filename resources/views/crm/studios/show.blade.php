@@ -11,6 +11,15 @@
             </a>
         </div>
     </div>
+    @if (session('success'))
+        <div class="row">
+            <div class="col-12">
+                <div class="alert alert-success">
+                    {{ session('success') }}
+                </div>
+            </div>
+        </div>
+    @endif
     <div class="row row-cols-2">
         <div class="col">
             <form action="" method="post">
@@ -47,6 +56,11 @@
                 </form>
             @else
                 <img src="{{ $studio->image->path }}" alt="" class="img-fluid rounded">
+                <form action="{{ route('crm.studios.destroy-image', [$studio->id, $studio->image->id]) }}" method="post"> @csrf @method('DELETE')
+                    <button type="submit" class="btn btn-danger mt-2">Удалить изображение
+                        <i class="fa fa-trash px-1"></i>
+                    </button>
+                </form>
             @endif
         </div>
     </div>
