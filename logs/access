@@ -5288,3 +5288,16 @@
 127.0.0.1 - - [02/Dec/2023:02:41:57 +0700] "GET /uploads/banner-1.jpg HTTP/1.1" 404 6603
 127.0.0.1 - - [02/Dec/2023:02:42:00 +0700] "GET /uploads/banner-2.jpg HTTP/1.1" 404 6603
 127.0.0.1 - - [02/Dec/2023:02:42:03 +0700] "GET /uploads/banner-3.jpg HTTP/1.1" 404 6603
+127.0.0.1 - - [02/Dec/2023:02:42:06 +0700] "GET /uploads/banner-1.jpg HTTP/1.1" 404 6603
+127.0.0.1 - - [02/Dec/2023:02:42:09 +0700] "GET /uploads/banner-2.jpg HTTP/1.1" 404 6603
+127.0.0.1 - - [02/Dec/2023:02:43:00 +0700] "GET /uploads/banner-3.jpg HTTP/1.1" 404 6603
+127.0.0.1 - - [02/Dec/2023:02:43:47 +0700] "GET /crm/ HTTP/1.1" 301 227
+127.0.0.1 - - [02/Dec/2023:02:43:47 +0700] "GET /crm HTTP/1.1" 500 1175997
+127.0.0.1 - - [02/Dec/2023:02:43:48 +0700] "GET /build/assets/Blogger_Sans-Light-b1a99ec8.woff HTTP/1.1" 304 -
+127.0.0.1 - - [02/Dec/2023:02:44:00 +0700] "GET /uploads/banner-1.jpg HTTP/1.1" 404 6603
+127.0.0.1 - - [02/Dec/2023:02:44:38 +0700] "GET /crm HTTP/1.1" 500 1138733
+127.0.0.1 - - [02/Dec/2023:02:44:45 +0700] "GET /crm HTTP/1.1" 302 362
+127.0.0.1 - - [02/Dec/2023:02:44:46 +0700] "GET /crm/companies HTTP/1.1" 200 5806
+127.0.0.1 - - [02/Dec/2023:02:45:00 +0700] "GET /uploads/banner-2.jpg HTTP/1.1" 404 6603
+127.0.0.1 - - [02/Dec/2023:02:45:02 +0700] "POST /crm/companies/1 HTTP/1.1" 302 362
+127.0.0.1 - - [02/Dec/2023:02:45:02 +0700] "GET /crm/companies HTTP/1.1" 200 5990
