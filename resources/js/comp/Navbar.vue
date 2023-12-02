@@ -33,7 +33,7 @@ export default{
                                 <li>Студии</li>
                             </a>
                             <a href="#portfolio">
-                                <li>Нашии работы</li>
+                                <li>Наши работы</li>
                             </a>
                     </ul>
                 </div>
@@ -59,7 +59,7 @@ export default{
                                 <li>Студии</li>
                             </a>
                             <a href="#portfolio">
-                                <li>Нашии работы</li>
+                                <li>Наши работы</li>
                             </a>
                         </ul>
                     </div>

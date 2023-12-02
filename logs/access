@@ -7148,3 +7148,8 @@
 127.0.0.1 - - [02/Dec/2023:22:34:52 +0700] "POST /crm/studios/destroy-image/3/16 HTTP/1.1" 302 362
 127.0.0.1 - - [02/Dec/2023:22:34:52 +0700] "GET /crm/studios/3 HTTP/1.1" 200 6580
 127.0.0.1 - - [02/Dec/2023:22:34:53 +0700] "GET /build/assets/Blogger_Sans-Light-b1a99ec8.woff HTTP/1.1" 404 6603
+127.0.0.1 - - [02/Dec/2023:22:35:11 +0700] "GET /crm/studios/3 HTTP/1.1" 200 6354
+127.0.0.1 - - [02/Dec/2023:22:35:11 +0700] "GET /build/assets/Blogger_Sans-Light-b1a99ec8.woff HTTP/1.1" 404 6603
+127.0.0.1 - - [02/Dec/2023:22:41:32 +0700] "GET / HTTP/1.1" 200 4958
+127.0.0.1 - - [02/Dec/2023:22:41:33 +0700] "GET /build/assets/Blogger_Sans-Light-b1a99ec8.woff HTTP/1.1" 404 6603
+127.0.0.1 - - [02/Dec/2023:22:41:34 +0700] "GET /uploads/banners/banner-1.jpg HTTP/1.1" 304 -

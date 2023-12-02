@@ -40,7 +40,7 @@ export default{
                 :style="'background: url('+ banners[current].image.path +')'"
             ></div>
         </transition-group>
-        <div class="container position-relative">
+        <div class="container position-relative" style="z-index: 99;">
             <div class="row justify-content-center">
                 <transition-group
                     tag="div"

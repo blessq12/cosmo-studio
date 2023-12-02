@@ -34,7 +34,7 @@ export default{
             </p>
             <div class="row mb-4">
                 <div class="col-12">
-                    <a href="https://taplink.cc/cosmostudiotomsk?utm_source=2gis" target="_blank" class="btn btn-outline-primary w-100 btn-lg">
+                    <a href="https://taplink.cc/cosmostudiotomsk?utm_source=2gis" target="_blank" class="btn btn-primary w-100 btn-lg">
                         Записаться
                     </a>
                 </div>
