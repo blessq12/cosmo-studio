@@ -8,7 +8,7 @@
     "src": "resources/fonts/Optima-Regular.woff"
   },
   "resources/js/app.css": {
-    "file": "assets/app-fdc60fce.css",
+    "file": "assets/app-d121cf95.css",
     "src": "resources/js/app.css"
   },
   "resources/js/app.js": {
@@ -17,9 +17,9 @@
       "assets/Optima-Regular-9bbcea39.woff"
     ],
     "css": [
-      "assets/app-fdc60fce.css"
+      "assets/app-d121cf95.css"
     ],
-    "file": "assets/app-3be15789.js",
+    "file": "assets/app-5feeaa86.js",
     "isEntry": true,
     "src": "resources/js/app.js"
   },
@@ -29,7 +29,7 @@
     "src": "resources/sass/crm/app.sass"
   },
   "resources/sass/front/app.sass": {
-    "file": "assets/app-989e98a3.css",
+    "file": "assets/app-acea0b8f.css",
     "isEntry": true,
     "src": "resources/sass/front/app.sass"
   }

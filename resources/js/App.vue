@@ -25,6 +25,9 @@ export default{
     <section class="pt-0" id="slugs">
         <slugs :slugs="slugs"></slugs>
     </section>
+    <section class="pt-0">
+        <materials></materials>
+    </section>
     <section class="pt-0" id="studios">
         <studios :studios="studios"></studios>
     </section>
