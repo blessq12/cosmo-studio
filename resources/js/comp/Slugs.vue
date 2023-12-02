@@ -32,13 +32,16 @@ export default{
                     </button>
                     </h2>
                     <div :id="'collapse-'+category.uri" class="accordion-collapse collapse" :aria-labelledby="'heading-'+category.uri" data-bs-parent="#accordionExample">
-                        <div class="accordion-body">
+                        <div class="accordion-body" v-if="category.slugs.length">
                             <ul class="list-unstyled p-0 m-0">
                                 <li v-for="slug in category.slugs" :key="slug.id" class="border-bottom mb-4 d-flex justify-content-between">
                                     <h6 style="padding-right: 6px;" class="mb-4">{{ slug.name }}</h6>
                                     <b class="fs-6" style="white-space: nowrap;" v-if="slug.lPrice">от {{ slug.lPrice }} {{ slug.hPrice ? 'до ' + slug.hPrice : '' }} ₽</b>
                                 </li>
                             </ul>
+                        </div>
+                        <div class="accordion-body" v-else>
+                            <h5>В этой категории еще нет услуг</h5>
                         </div>
                     </div>
                 </div>

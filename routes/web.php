@@ -4,9 +4,11 @@ use App\Http\Controllers\CompanyController;
 use App\Http\Controllers\CrmController;
 use App\Http\Controllers\GalleryController;
 use App\Http\Controllers\IndexController;
+use App\Http\Controllers\SlugController;
 use App\Http\Controllers\StudioController;
 use App\Http\Controllers\UserController;
 use App\Models\GalleryCategory;
+use App\Models\SlugCategory;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -47,5 +49,7 @@ Route::middleware('auth')->group(function(){
 
         Route::resource('banners', BannerController::class);
         Route::resource('companies', CompanyController::class);
+        Route::post('/slugs/store/slug', [SlugCategory::class, 'storeSlug'])->name('slugs.store-slug');
+        Route::resource('slugs', SlugController::class);
     });
 });

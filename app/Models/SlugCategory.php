@@ -9,6 +9,10 @@ class SlugCategory extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+        'name',
+        'uri'
+    ];
     public function slugs(){
         return $this->hasMany(Slug::class);
     }
