@@ -17,7 +17,22 @@ export default{
 
 <template>
     <footer>
-        <div class="container"></div>
+        <div class="container">
+            <div class="row g-2 justify-content-center">
+                <div class="col-6 col-md-2">
+                    <button type="button" class="btn btn-outline-light btn-lg w-100">
+                        <i class="fa fa-vk"></i>
+                        Вконтакте
+                    </button>
+                </div>
+                <div class="col-6 col-md-2">
+                    <button type="button" class="btn btn-outline-light btn-lg w-100">
+                        <i class="fa fa-yahoo"></i>
+                        Яндекс
+                    </button>
+                </div>
+            </div>
+        </div>
         <div class="copyright">
             <div class="container">
                 <div class="row">

@@ -76,6 +76,8 @@ class BannerController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        Banner::findOrFail($id)->image()->first()->delete();
+        Banner::find($id)->delete();
+        return back()->with('success', 'Баннер удален');
     }
 }

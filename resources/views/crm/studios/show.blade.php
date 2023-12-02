@@ -34,7 +34,7 @@
                 </div>
                 <div class="form-group mb-4">
                     <label for="navYandex">Маршрут(Яндекс)</label>
-                    <textarea name="" class="form-control" id="" cols="30" rows="8">{{ $studio->navYandex }}</textarea>
+                    <textarea name="navYandex" class="form-control" id="" cols="30" rows="8">{{ $studio->navYandex }}</textarea>
                 </div>
                 <button type="submit" class="btn btn-primary w-100">Сохранить</button>
             </form>

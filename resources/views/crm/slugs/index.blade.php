@@ -32,6 +32,13 @@
         </div>
     </div>
     <div class="row row-cols-3">
+        @if (session('success'))
+            <div class="col-12">
+                <div class="alert alert-success">
+                    {{ session('success') }}
+                </div>
+            </div>
+        @endif
         @foreach ($slugs as $category)
         <div class="col">
             <div class="mb-4 border p-3 rounded" style="min-height: 120px">

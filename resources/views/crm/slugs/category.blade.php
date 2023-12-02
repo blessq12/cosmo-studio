@@ -23,12 +23,21 @@
                         <div class="accordion-body">
                             <form class="row row-cols-auto align-items-end" method="post" action="{{ route('crm.slugs.store-slug') }}">
                                 @csrf
-                                <div class="col form-group">
+                                <input type="hidden" name="categoryId" value="{{ $category->id }}">
+                                <div class="col-6 form-group">
                                     <label for="name">Название услуги</label>
                                     <input type="text" name="name" id="name" class="form-control" required>
                                 </div>
-                                <div class="col form-group">
-                                    <button type="submit" class="btn btn-primary w-100">Создать категорию</button>
+                                <div class="col-2">
+                                    <label for="lPrice">Цена "от"</label>
+                                    <input type="text" name="lPrice" id="lPrice" class="form-control" required>
+                                </div>
+                                <div class="col-2">
+                                    <label for="hPrice">Цена "до"</label>
+                                    <input type="text" name="hPrice" id="hPrice" class="form-control" required>
+                                </div>
+                                <div class="col-2 form-group">
+                                    <button type="submit" class="btn btn-primary w-100">Создать</button>
                                 </div>
                             </form>
                         </div>
@@ -38,6 +47,13 @@
         </div>
     </div>
     <div class="row">
+        @if (session('success'))
+            <div class="col-12">
+                <div class="alert alert-success">
+                    {{ session('success') }}
+                </div>
+            </div>
+        @endif
         @if ($category->slugs->isEmpty())
             <div class="col">
                 <p>В этой категории нет ни одной добавленной услуги</p>
@@ -55,8 +71,9 @@
                                     </h2>
                                     <div class="accordion-collapse collapse" id="slug-{{$slug->id}}">
                                         <div class="accordion-body">
-                                            <form action="" method="post" class="row row-cols-auto align-items-end">
-                                                <div class="col-6">
+                                            <form action="{{ route('crm.slugs.update', $slug->id) }}" method="post" class="row g-1 row-cols-auto align-items-end">
+                                                @csrf @method('PATCH')
+                                                <div class="col-5">
                                                     <div class="form-group">
                                                         <label for="name">Название услуги</label>
                                                         <input type="text" name="name" id="name" class="form-control" value="{{ $slug->name }}">
@@ -70,10 +87,16 @@
                                                     <label for="hPrice">Цена "до"</label>
                                                     <input type="text" name="hPrice" id="hPrice" class="form-control" value="{{ $slug->hPrice }}">
                                                 </div>
-                                                <div class="col-2">
-                                                    <button type="submit" class="btn btn-primary w-100">Сохранить</button>
-                                                </div>
-                                            </form>
+                                                <div class="col-3 d-flex align-items-center">
+                                                    <button type="submit" class="btn btn-primary mx-1">Сохранить</button>
+                                                </form>
+                                                <form action="{{ route('crm.slugs.destroy-slug',['category'=>$category->id,'id'=>$slug->id]) }}" method="post">
+                                                    @csrf @method('DELETE')
+                                                    <button type="submit" class="btn btn-danger">
+                                                        <i class="fa fa-trash"></i>
+                                                    </button>
+                                                </form>        
+                                            </div>
                                         </div>
                                     </div>
                                 </div>

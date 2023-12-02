@@ -77,7 +77,8 @@ class StudioController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        Studio::findOrFail($id)->update($request->all());
+        return back()->with('success', 'Данные о студии обновлены');
     }
 
     /**
@@ -95,7 +96,9 @@ class StudioController extends Controller
         $studio = Studio::findOrFail($request->studioId);
 
         $image = $studio->image()->create(['path' => 'temprorary']);
+
         $imageName = 'studio-' . $studio->id . '.' . $request->file('image')->getClientOriginalExtension();
+        
         $request->file('image')->storeAs('/public/uploads/studios', $imageName);
 
         $studio->image()->latest()->first()->update(['path' => '/uploads/studios/' .$imageName]);

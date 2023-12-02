@@ -49,7 +49,10 @@ Route::middleware('auth')->group(function(){
 
         Route::resource('banners', BannerController::class);
         Route::resource('companies', CompanyController::class);
-        Route::post('/slugs/store/slug', [SlugCategory::class, 'storeSlug'])->name('slugs.store-slug');
+
+        Route::post('/slugs/store/slug', [SlugController::class, 'storeSlug'])->name('slugs.store-slug');
+        Route::delete('/slugs/destroy-slug/{category}/{id}', [SlugController::class, 'destroySlug'])->name('slugs.destroy-slug');
+        
         Route::resource('slugs', SlugController::class);
     });
 });

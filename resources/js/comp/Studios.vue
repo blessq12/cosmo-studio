@@ -21,7 +21,7 @@ export default{
             <div v-if="studios.length">
                 <ul class="studio-list">
                     <li v-for="studio in studios" :key="studio.id">
-                        <div class="studio" :ref="studio.uri" :style="'background: url('+ studio.image.path +')'">
+                        <div class="studio" :ref="studio.uri" :style="'background: url('+ (studio.image !== null ? studio.image.path : '//via.placeholder.com/512x512') + ')'">
                             <div class="position-relative w-100 content">
                                 <h5>Тел: {{ studio.phone }}</h5>
                                 <h3>{{ studio.address }}</h3>

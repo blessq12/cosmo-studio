@@ -44,7 +44,10 @@ class SlugController extends Controller
      * Store a newly created child resource in storage.
      */
     public function storeSlug(Request $request){
-        return $request;
+        $category = SlugCategory::findOrFail($request->categoryId);
+        $category->slugs()->create($request->all());
+
+        return back()->with('success', 'Услуга создана');
     }
 
     /**
@@ -78,6 +81,18 @@ class SlugController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $category = SlugCategory::findOrFail($id);
+        $category->slugs->each( fn ($slug) => $slug->delete());
+
+        $category->delete();
+        return back()->with('success', 'Категория успешно удалена');
+    }
+
+    /**
+     * Remove the specified resource from storage.
+     */
+    public function destroySlug(string $category, string $id){
+        SlugCategory::findOrFail($category)->slugs()->find($id)->delete();
+        return back()->with('success', 'Услуга удалена');
     }
 }
