@@ -1,12 +1,9 @@
 <script>
 export default{
-    data:()=>({
-        galleries: [
-            {id: 1, uri: 'nails', name: 'Ногтевая студия', images:[{}, {}, {}]},
-            {id: 2, uri: 'hair', name: 'Парикмахераска', images:[{}, {}, {}, {}, {}, {}, {}]},
-            {id: 3, uri: 'brows', name: 'Брови', images:[{}, {}, {}, {}, {}]},
-        ]
-    })
+    props:{
+        galleries: Object
+    },
+    data:()=>({})
 }
 </script>
 
@@ -15,35 +12,63 @@ export default{
     <div class="row mb-4">
         <div class="col-12">
             <div class="section-title">
-                <h5>Портфолио</h5>
-                <h2>Галерея наших готовых работ</h2>
+                <h2>Наши работы</h2>
             </div>
         </div>
     </div>
     <div class="row">
         <div class="col-12">
-            <div class="gallery" v-for="gallery in galleries">
-                <h4>{{ gallery.name }}</h4>
-                <div class="gallery-nav d-flex justify-content-end">
-                    <div class="prev" @click="()=>{
-                        $refs[gallery.uri][0].scrollLeft -= 312
-                    }">
-                        <i class="fa fa-arrow-left">
-                        </i>
+            <div v-if="galleries.length">
+                <div class="gallery" v-for="gallery in galleries">
+                    <h3>{{ gallery.name }}</h3>
+                    <div class="gallery-nav d-flex justify-content-end" v-if="gallery.images.length">
+                        <div class="prev" @click="()=>{
+                            $refs[gallery.uri][0].scrollLeft -= 312
+                        }">
+                            <i class="fa fa-arrow-left">
+                            </i>
+                        </div>
+                        <div class="next" @click="()=>{
+                            $refs[gallery.uri][0].scrollLeft += 312
+                        }">
+                            <i class="fa fa-arrow-right"></i>
+                        </div>
                     </div>
-                    <div class="next" @click="()=>{
-                        $refs[gallery.uri][0].scrollLeft += 312
-                    }">
-                        <i class="fa fa-arrow-right"></i>
-                    </div>
+                <hr>
+                <div v-if="gallery.images.length">
+                    <ul :ref="gallery.uri" :id="gallery.uri">
+                        <li v-for="image in gallery.images">    
+                            <div class="gallery-item" :style="'background: url(' + image.path + ')'"></div>
+                        </li>
+                    </ul>
                 </div>
+                <div v-else>
+                    <ul>
+                        <li class="placeholder-glow"><div class="gallery-item placeholder"></div></li>
+                        <li class="placeholder-glow"><div class="gallery-item placeholder"></div></li>
+                        <li class="placeholder-glow"><div class="gallery-item placeholder"></div></li>
+                        <li class="placeholder-glow"><div class="gallery-item placeholder"></div></li>
+                    </ul>
+                </div>
+                </div>
+            </div>
+            <div v-else>
+                <div class="gallery placeholder-glow">
+                    <h4 class="placeholder col-4 rounded">
+                    </h4>
+                    <div class="gallery-nav d-flex justify-content-end">
+                        <div class="prev placeholder col-1"></div>
+                        <div class="next placeholder col-1"></div>
+                    </div>  
                 
-                <hr class="mt-0">
-                <ul :ref="gallery.uri" :id="gallery.uri">
-                    <li v-for="image in gallery.images">
-                        <div class="gallery-item" style="background: url('/uploads/banner-1.jpg');"></div>
-                    </li>
-                </ul>
+                    <hr class="mt-0">
+                    <ul>
+                        <li><div class="gallery-item placeholder"></div></li>
+                        <li><div class="gallery-item placeholder"></div></li>
+                        <li><div class="gallery-item placeholder"></div></li>
+                        <li><div class="gallery-item placeholder"></div></li>
+                    </ul>
+                </div>
             </div>
         </div>
     </div>
@@ -53,9 +78,12 @@ export default{
 <style lang="sass">
 .gallery-nav
     .prev
-        margin-right: 12px
+        margin-right: 18px
+        cursor: pointer
+        font-size: 1.5rem
     .next
-        
+        cursor: pointer
+        font-size: 1.5rem
 .gallery
     margin-bottom: 24px
     position: relative
@@ -63,6 +91,9 @@ export default{
         margin-bottom: unset
     hr
         width: 50%
+        border-top-color: $color-main
+        opacity: 1
+        border-width: 3px
     ul
         list-style: none
         display: flex

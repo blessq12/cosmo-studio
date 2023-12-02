@@ -63,7 +63,7 @@
             </div>
         @endif
         @foreach ($categories as $category)
-            <div class="col">
+            <div class="col mb-4">
                 <div class="category-item border p-3 rounded">
                     <div class="d-flex justify-content-between">
                         <div class="d-block">

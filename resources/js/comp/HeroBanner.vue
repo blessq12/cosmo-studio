@@ -3,21 +3,16 @@ import { callWithAsyncErrorHandling } from 'vue';
 
 export default{
     props:{
-        duration: String
+        duration: String,
+        banners: Object
     },
-    inject:['company'],
     mounted(){
         setInterval(()=>{
             this.current++
         }, this.duration)
     },
     data:()=>({
-        current: 0,
-        banners: [
-            {id: 1, text: 'Профессиональный уход от Insight в подарок в декабре при визите на окрашивание', image: '/uploads/banner-1.jpg'},
-            {id: 2, text: 'Скидка 300 рублей на первый визит. Комплекс Маникюр с покрытиием гель-лак и снятием от 1100 рублей до 1500 рублей', image: '/uploads/banner-2.jpg'},
-            {id: 2, text: 'Только в декабре при визите на маникюр с покрытием — коррекция бровей в подарок', image: '/uploads/banner-3.jpg'},
-        ]
+        current: 0, 
     }),
     watch:{
         current(val,old){
@@ -33,44 +28,58 @@ export default{
 </script>
 
 <template>
-<div class="hero-banner position-relative">
-    <transition-group
-        enter-active-class="animate__animated animate__fadeIn"
-        leave-active-class="animate__animated animate__fadeOut"
-    >
-        <div class="image position-absolute h-100 w-100 bg-image-cover"
-            v-if="banners[current] !== undefined"
-            :key="current"
-            :style="'background: url('+ banners[current].image +')'"
-        ></div>
-    </transition-group>
-    <div class="container position-relative">
-        <div class="row justify-content-center">
-            <transition-group
-                tag="div"
-                class="position-relative d-flex align-items-center justify-content-center"
-                enter-active-class="animate__animated animate__flipInX"
-                leave-active-class="animate__animated animate__flipOutX"
-            >
-                <div class="col-10 col-md-8 text-center position-absolute" 
-                    v-for="banner in banners" 
-                    v-show="current == banners.indexOf(banner)"
-                    :key="banner.id"
+<div v-if="banners.length">
+    <div class="hero-banner position-relative">
+        <transition-group
+            enter-active-class="animate__animated animate__fadeIn"
+            leave-active-class="animate__animated animate__fadeOut"
+        >
+            <div class="image position-absolute h-100 w-100 bg-image-cover"
+                v-if="banners[current] !== undefined"
+                :key="current"
+                :style="'background: url('+ banners[current].image.path +')'"
+            ></div>
+        </transition-group>
+        <div class="container position-relative">
+            <div class="row justify-content-center">
+                <transition-group
+                    tag="div"
+                    class="position-relative d-flex align-items-center justify-content-center"
+                    enter-active-class="animate__animated animate__flipInX"
+                    leave-active-class="animate__animated animate__flipOutX"
                 >
-                    <h3>{{ banner.text }}</h3>
-                </div>
-            </transition-group>
+                    <div class="col-10 col-md-8 text-center position-absolute bg-dark p-4"
+                        style="--bs-bg-opacity: .5;" 
+                        v-for="banner in banners" 
+                        v-show="current == banners.indexOf(banner)"
+                        :key="banner.id"
+                    >
+                        <h3>{{ banner.header }}</h3>
+                        <p class="mb-0">{{ banner.subheader }}</p>
+                    </div>
+                </transition-group>
+            </div>
+        </div>
+    </div>
+    <div class="d-flex justify-content-center position-relative">
+        <div class="slider-nav">
+            <button type="button" @click="current--" class="btn text-white">
+                <i class="fa fa-arrow-left"></i>
+            </button>
+            <button type="button" @click="current++" class="btn text-white">
+                <i class="fa fa-arrow-right"></i>
+            </button>
         </div>
     </div>
 </div>
-<div class="d-flex justify-content-center position-relative">
-    <div class="slider-nav">
-        <button type="button" @click="current--" class="btn text-white">
-            <i class="fa fa-arrow-left"></i>
-        </button>
-        <button type="button" @click="current++" class="btn text-white">
-            <i class="fa fa-arrow-right"></i>
-        </button>
+<div v-else>
+    <div class="hero-banner placeholder-glow">
+        <div class="image placeholder"></div>
+        <div class="container position-relative ">
+            <div class="row justify-content-center">
+                <div class="col-12 col-md-6 placeholder rounded" style="height: 200px;opacity: .3;"></div>
+            </div>
+        </div>
     </div>
 </div>
 </template>

@@ -1,8 +1,4 @@
 {
-  "resources/fonts/Blogger_Sans-Light.woff": {
-    "file": "assets/Blogger_Sans-Light-b1a99ec8.woff",
-    "src": "resources/fonts/Blogger_Sans-Light.woff"
-  },
   "resources/fonts/Optima-Bold.woff": {
     "file": "assets/Optima-Bold-23c70cd2.woff",
     "src": "resources/fonts/Optima-Bold.woff"
@@ -12,29 +8,28 @@
     "src": "resources/fonts/Optima-Regular.woff"
   },
   "resources/js/app.css": {
-    "file": "assets/app-18994bc7.css",
+    "file": "assets/app-3249e93e.css",
     "src": "resources/js/app.css"
   },
   "resources/js/app.js": {
     "assets": [
       "assets/Optima-Bold-23c70cd2.woff",
-      "assets/Optima-Regular-9bbcea39.woff",
-      "assets/Blogger_Sans-Light-b1a99ec8.woff"
+      "assets/Optima-Regular-9bbcea39.woff"
     ],
     "css": [
-      "assets/app-18994bc7.css"
+      "assets/app-3249e93e.css"
     ],
-    "file": "assets/app-7a455c14.js",
+    "file": "assets/app-6da0b08a.js",
     "isEntry": true,
     "src": "resources/js/app.js"
   },
   "resources/sass/crm/app.sass": {
-    "file": "assets/app-3f8a74ea.css",
+    "file": "assets/app-8b7a90e0.css",
     "isEntry": true,
     "src": "resources/sass/crm/app.sass"
   },
   "resources/sass/front/app.sass": {
-    "file": "assets/app-04c69863.css",
+    "file": "assets/app-989e98a3.css",
     "isEntry": true,
     "src": "resources/sass/front/app.sass"
   }

@@ -1,6 +1,9 @@
 <script>
 export default{
-    inject:['company']
+    inject:['company'],
+    props:{
+        studios: Object
+    }
 }
 </script>
 
@@ -9,36 +12,50 @@ export default{
     <div class="row mb-4">
         <div class="col-12">
             <div class="section-title">
-                <h5>Мы близко</h5>
-                <h2>Контактная информация наших студий</h2>
+                <h2>Мы близко</h2>
             </div>
         </div>
     </div>
     <div class="row">
         <div class="col-12">
-            <ul class="studio-list">
-                <li v-for="studio in company.studios" :key="studio.id">
-                    <div class="studio" :ref="studio.uri" :style="'background: url('+ studio.image +')'">
-                        <div class="position-relative w-100 content">
-                            <h5>Тел: {{ studio.phone }}</h5>
-                            <h3>{{ studio.address }}</h3>
-                            <div class="row g-2 mb-2">
-                                <div class="col-6">
-                                    <a :href="'tel:'+studio.phone" class="btn btn-outline-light btn-sm w-100">
-                                        <i class="fa fa-phone"></i>
-                                    </a>
+            <div v-if="studios.length">
+                <ul class="studio-list">
+                    <li v-for="studio in studios" :key="studio.id">
+                        <div class="studio" :ref="studio.uri" :style="'background: url('+ studio.image.path +')'">
+                            <div class="position-relative w-100 content">
+                                <h5>Тел: {{ studio.phone }}</h5>
+                                <h3>{{ studio.address }}</h3>
+                                <div class="row g-2 mb-2">
+                                    <div class="col-6">
+                                        <a :href="'tel:'+studio.phone" class="btn btn-outline-light btn-sm w-100">
+                                            <i class="fa fa-phone"></i>
+                                        </a>
+                                    </div>
+                                    <div class="col-6">
+                                        <a :href="studio.navYandex !== null ? studio.navYandex : '#' " class="btn btn-outline-light btn-sm w-100">
+                                            <i class="fa fa-map-marker"></i>
+                                        </a>
+                                    </div>
                                 </div>
-                                <div class="col-6">
-                                    <a :href="studio.navYandex" class="btn btn-outline-light btn-sm w-100">
-                                        <i class="fa fa-map-marker"></i>
-                                    </a>
-                                </div>
+                                <button class="btn btn-outline-light btn-sm w-100">Записаться</button>
                             </div>
-                            <button class="btn btn-outline-light btn-sm w-100">Записаться</button>
                         </div>
-                    </div>
-                </li>
-            </ul>
+                    </li>
+                </ul>
+            </div>
+            <div v-else>
+                <ul class="studio-list">
+                    <li class="placeholder-glow">
+                        <div class="studio placeholder"></div>
+                    </li>
+                    <li class="placeholder-glow">
+                        <div class="studio placeholder"></div>
+                    </li>
+                    <li class="placeholder-glow">
+                        <div class="studio placeholder"></div>
+                    </li>
+                </ul>
+            </div>
         </div>
     </div>
 </div>

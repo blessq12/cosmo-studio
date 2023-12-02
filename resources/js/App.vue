@@ -2,7 +2,10 @@
 export default{
     props:{
         company: Object,
-        slugs: Object
+        slugs: Object,
+        galleries: Object,
+        banners: Object,
+        studios: Object
     },
     provide(){
         return{
@@ -15,18 +18,18 @@ export default{
 
 <template>
     <navbar></navbar>
-    <hero-banner duration="3000"></hero-banner>
+    <hero-banner :banners="banners" duration="5000"></hero-banner>
     <section>
         <about></about>
     </section>
     <section class="pt-0">
-        <slugs></slugs>
+        <slugs :slugs="slugs"></slugs>
     </section>
     <section class="pt-0">
-        <studios></studios>
+        <studios :studios="studios"></studios>
     </section>
     <section>
-        <gallery></gallery>
+        <gallery :galleries="galleries"></gallery>
     </section>
     <Footer></Footer>
 </template>
