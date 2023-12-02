@@ -32,6 +32,14 @@ export default{
             <p class="ps">
                 С уважением, студия <span class="text-primary">Cosmo</span>.
             </p>
+            <div class="row">
+                <div class="col-12">
+                    <a href="https://taplink.cc/cosmostudiotomsk?utm_source=2gis" target="_blank" class="btn btn-outline-primary w-100 btn-lg">
+                        Записаться
+                    </a>
+                </div>
+                <div class="col-6"></div>
+            </div>
         </div>
         <div class="col-12 col-lg-6">
             <div class="bg-image-cover h-100 rounded" style="min-height: 250px;background: url('/uploads/banners/banner-1.jpg');">

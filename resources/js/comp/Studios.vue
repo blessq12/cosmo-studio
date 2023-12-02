@@ -37,7 +37,7 @@ export default{
                                         </a>
                                     </div>
                                 </div>
-                                <button class="btn btn-outline-light btn-sm w-100">Записаться</button>
+                                <a target="_blank" href="https://taplink.cc/cosmostudiotomsk?utm_source=2gis" class="btn btn-outline-light btn-sm w-100">Записаться</a>
                             </div>
                         </div>
                     </li>

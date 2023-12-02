@@ -19,16 +19,16 @@ export default{
 <template>
     <navbar></navbar>
     <hero-banner :banners="banners" duration="5000"></hero-banner>
-    <section>
+    <section id="about">
         <about></about>
     </section>
-    <section class="pt-0">
+    <section class="pt-0" id="slugs">
         <slugs :slugs="slugs"></slugs>
     </section>
-    <section class="pt-0">
+    <section class="pt-0" id="studios">
         <studios :studios="studios"></studios>
     </section>
-    <section>
+    <section id="portfolio">
         <gallery :galleries="galleries"></gallery>
     </section>
     <Footer></Footer>
