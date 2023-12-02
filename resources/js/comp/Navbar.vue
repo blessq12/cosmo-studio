@@ -8,11 +8,17 @@ export default{
     <div class="invisible pt-5"></div>
     <nav>
         <div class="container">
-            <div class="row">
-                <div class="col-12 d-flex align-items-center">
-                    <a href="" class="optima logo">
+            <div class="row align-items-center">
+                <div class="col-6 col-md-4 col-lg-4 d-flex align-items-center">
+                    <a href="/" class="optima logo">
                         {{ company.name }}
                     </a>
+                </div>
+                <div class="col-6 col-md-8 col-lg-8 d-flex justify-content-end">
+                    <button class="btn btn-outline-light mx-2">Записаться</button>
+                    <button class="btn btn-outline-light">
+                        <i class="fa fa-bars"></i>
+                    </button>
                 </div>
             </div>
         </div>

@@ -34,7 +34,7 @@ export default{
             </p>
         </div>
         <div class="col-12 col-lg-6">
-            <div class="bg-image-cover h-100 rounded" style="min-height: 250px;background: url('/uploads/banner-1.jpg');">
+            <div class="bg-image-cover h-100 rounded" style="min-height: 250px;background: url('/uploads/banners/banner-1.jpg');">
             </div>
         </div>
     </div>
