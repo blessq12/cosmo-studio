@@ -8,7 +8,7 @@
     "src": "resources/fonts/Optima-Regular.woff"
   },
   "resources/js/app.css": {
-    "file": "assets/app-d121cf95.css",
+    "file": "assets/app-63be4e20.css",
     "src": "resources/js/app.css"
   },
   "resources/js/app.js": {
@@ -17,9 +17,9 @@
       "assets/Optima-Regular-9bbcea39.woff"
     ],
     "css": [
-      "assets/app-d121cf95.css"
+      "assets/app-63be4e20.css"
     ],
-    "file": "assets/app-5feeaa86.js",
+    "file": "assets/app-3e5beb3a.js",
     "isEntry": true,
     "src": "resources/js/app.js"
   },

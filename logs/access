@@ -7165,3 +7165,9 @@
 127.0.0.1 - - [02/Dec/2023:23:01:48 +0700] "GET /uploads/banners/banner-1.jpg HTTP/1.1" 304 -
 127.0.0.1 - - [02/Dec/2023:23:01:49 +0700] "GET /favicon.ico HTTP/1.1" 200 -
 127.0.0.1 - - [02/Dec/2023:23:21:53 +0700] "GET /uploads/splash.png HTTP/1.1" 200 806514
+127.0.0.1 - - [02/Dec/2023:23:36:04 +0700] "GET / HTTP/1.1" 200 4958
+127.0.0.1 - - [02/Dec/2023:23:36:06 +0700] "GET /build/assets/Blogger_Sans-Light-b1a99ec8.woff HTTP/1.1" 404 6603
+127.0.0.1 - - [02/Dec/2023:23:36:08 +0700] "GET /uploads/splash.png HTTP/1.1" 304 -
+127.0.0.1 - - [02/Dec/2023:23:36:08 +0700] "GET /uploads/banners/banner-1.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [02/Dec/2023:23:36:22 +0700] "GET / HTTP/1.1" 200 4958
+127.0.0.1 - - [02/Dec/2023:23:36:22 +0700] "GET /build/assets/Blogger_Sans-Light-b1a99ec8.woff HTTP/1.1" 404 6603

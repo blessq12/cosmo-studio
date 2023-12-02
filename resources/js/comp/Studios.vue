@@ -96,7 +96,7 @@ export default{
               top: 0
               height: 100%
               position: absolute
-              background: rgba(0, 0, 0, .6)
+              background: $overlay
             .content
                 color: $color-white
                 h5
