@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Studio;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Validator;
 use Nette\Utils\Random;
 
@@ -94,13 +95,10 @@ class StudioController extends Controller
      */
     public function storeImage(Request $request){
         $studio = Studio::findOrFail($request->studioId);
-
+        Storage::delete('public/uploads/studios/studio-' . $studio->id);
         $image = $studio->image()->create(['path' => 'temprorary']);
-
         $imageName = 'studio-' . $studio->id . '.' . $request->file('image')->getClientOriginalExtension();
-        
         $request->file('image')->storeAs('/public/uploads/studios', $imageName);
-
         $studio->image()->latest()->first()->update(['path' => '/uploads/studios/' .$imageName]);
 
         return back()->with('success', 'Фотография загружена');
