@@ -13,16 +13,16 @@ export default{
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-6 col-md-4 col-lg-4 d-flex align-items-center">
-                    <a href="/" class="optima logo">
-                        {{ company.name }}
+                    <a href="/" class="logo">
+                        <img src="/logo.png" alt="" class="img-fluid">
                     </a>
                 </div>
                 <div class="col-6 col-md-8 col-lg-8 d-flex justify-content-md-start justify-content-end flex-md-row-reverse align-items-center">
                     <a href="https://taplink.cc/cosmostudiotomsk?utm_source=2gis" target="_blank" class="btn btn-outline-light mx-2">Записаться</a>
-                    <button class="btn btn-outline-light d-block d-md-none" @click="menu = !menu">
+                    <button class="btn btn-outline-light d-block d-lg-none" @click="menu = !menu">
                         <i class="fa fa-bars"></i>
                     </button>
-                    <ul class="d-none d-md-flex list-unstyled p-0 m-0 main-nav">
+                    <ul class="d-none d-lg-flex list-unstyled p-0 m-0 main-nav">
                             <a href="#about">
                                 <li>О нас</li>
                             </a>
@@ -88,15 +88,17 @@ nav
     position: fixed
     top: 0
     width: 100%
-    z-index: 10
+    z-index: 100
     height: 70px
     .logo
         text-decoration: none
         color: $color-white
-        font-size: 1.5rem
-        padding-top: 5px
         text-transform: uppercase
         margin-bottom: 0
+        img
+            height: 35px
+            @media(min-width: 768px)
+                height: 45px
 .mobile-nav
     position: fixed
     top: 70px
