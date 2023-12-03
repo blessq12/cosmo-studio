@@ -1,6 +1,7 @@
 @extends('layouts::front')
 
-@section('title', 'Студия Космо')
+@section('title', $company->name)
+@section('desc', $company->desc)
 
 @section('content')
 

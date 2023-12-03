@@ -4,8 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="description" content="@yield('desc')">
     <title>@yield('title')</title>
-    @include('includes::cdn')
+    @include('includes::favicon')
+    {{-- @include('includes::cdn') --}}
+    @include('includes::meta')
     @vite('resources/js/app.js')
     @vite('resources/sass/front/app.sass')
 </head>
