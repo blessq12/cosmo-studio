@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Slug;
 use App\Models\SlugCategory;
 use Illuminate\Http\Request;
 use Nette\Utils\Random;
@@ -73,7 +74,24 @@ class SlugController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $slug = Slug::findOrFail($id);
+        
+        if (!$request->has('prefixFrom')){
+            $prefixFrom = 0;
+        }
+        if (!$request->has('prefixTo')){
+            $prefixTo = 0;
+        }
+        $slug->update([
+            'name' => $request->name,
+            'prefixFrom' => $request->has('prefixFrom') ? $request->prefixFrom : '0',
+            'lPrice' => $request->lPrice,
+            'prefixTo' => $request->has('prefixTo') ? $request->prefixTo : '0',
+            'hPrice' => $request->hPrice,
+        ]);
+
+        
+        return back()->with('success', 'Услуга обновлена');
     }
 
     /**

@@ -16,6 +16,8 @@ return new class extends Migration
             $table->id();
             $table->foreignIdFor(SlugCategory::class);
             $table->string('name');
+            $table->boolean('prefixFrom')->default(false);
+            $table->boolean('prefixTo')->default(false);
             $table->string('lPrice')->nullable();
             $table->string('hPrice')->nullable();
             $table->timestamps();

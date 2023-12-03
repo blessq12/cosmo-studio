@@ -62,8 +62,8 @@
             <div class="col">
                 <p class="text-warning">Пустые поля цены не будут отображаться</p>
                 <div class="accordion">
-                                @foreach ($category->slugs as $slug)
-                                <div class="accordion-item">
+                    @foreach ($category->slugs as $slug)
+                        <div class="accordion-item">
                                     <h2 class="accordion-header">
                                         <button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#slug-{{$slug->id}}">
                                             {{ $slug->name }}
@@ -81,7 +81,12 @@
                                                 </div>
                                                 <div class="col-2">
                                                     <label for="lPrice">Цена "от"</label>
-                                                    <input type="text" name="lPrice" id="lPrice" class="form-control" value="{{ $slug->lPrice }}">
+                                                    <div class="input-group">
+                                                        <span class="input-group-text">
+                                                            <input class="form-check-input" type="checkbox" name="prefixFrom" value="1" {{ $slug->prefixFrom !== 0 ? 'checked' : '' }}>
+                                                        </span>
+                                                        <input type="text" name="lPrice" id="lPrice" class="form-control" value="{{ $slug->lPrice }}">
+                                                    </div>
                                                 </div>
                                                 <div class="col-2">
                                                     <label for="hPrice">Цена "до"</label>
@@ -99,8 +104,8 @@
                                             </div>
                                         </div>
                                     </div>
-                                </div>
-                            @endforeach
+                        </div>
+                    @endforeach
             </div>
         @endif
     </div>

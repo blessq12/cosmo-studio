@@ -36,7 +36,7 @@ export default{
                             <ul class="list-unstyled p-0 m-0">
                                 <li v-for="slug in category.slugs" :key="slug.id" class="border-bottom mb-4 d-flex justify-content-between">
                                     <h6 style="padding-right: 6px;" class="mb-4">{{ slug.name }}</h6>
-                                    <b class="fs-6" style="white-space: nowrap;" v-if="slug.lPrice">от {{ slug.lPrice }} {{ slug.hPrice ? 'до ' + slug.hPrice : '' }} ₽</b>
+                                    <b class="fs-6" style="white-space: nowrap;" v-if="slug.lPrice">{{ slug.prefixFrom ? 'от' : '' }} {{ slug.lPrice }} {{ slug.hPrice ? 'до ' + slug.hPrice : '' }} ₽</b>
                                 </li>
                             </ul>
                         </div>

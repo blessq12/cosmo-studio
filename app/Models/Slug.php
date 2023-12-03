@@ -10,7 +10,9 @@ class Slug extends Model
     use HasFactory;
     protected $fillable = [
         'name',
+        'prefixFrom',
         'lPrice',
+        'prefixTo',
         'hPrice'
     ];
 }
